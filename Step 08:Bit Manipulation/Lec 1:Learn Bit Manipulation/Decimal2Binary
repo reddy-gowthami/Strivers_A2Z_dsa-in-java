@@ -1,3 +1,5 @@
+//Question:https://www.geeksforgeeks.org/problems/bit-manipulation-1666686020/1
+
 //convert a number into binary string divide by 2
 //conevrt a string of 0s and 1s to decimal number of base 10.
 public class Decimal2Binary {
