@@ -1,1 +1,47 @@
+//convert a number into binary string divide by 2
+//conevrt a string of 0s and 1s to decimal number of base 10.
+public class Decimal2Binary {
+    public static void main(String[] args) {
+        int number = 10; // Example number
+        String binary = decimalToBinary(number);
+        System.out.println("Binary of " + number + " is: " + binary);
+
+        int decimal = binaryToDecimal(binary);
+        System.out.println("Decimal of " + binary + " is: " + decimal);
+    }
+
+    // Convert decimal to binary
+    public static String decimalToBinary(int n) {
+        StringBuilder res = new StringBuilder();
+        while (n > 0) {
+            res.append(n % 2);
+            n = n / 2;
+        }
+        return res.reverse().toString();
+    }
+
+    // Convert binary string to decimal
+    public static int binaryToDecimal(String binary) {
+        int decimal = 0;
+        int power = 0;
+
+        // Start from last digit (right to left)
+        for (int i = binary.length() - 1; i >= 0; i--) {
+            if (binary.charAt(i) == '1') {
+                decimal += Math.pow(2, power);
+            }
+            power++;
+        }
+
+        return decimal;
+    }
+}
+
+// Output:
+// Binary of 10 is: 1010
+// Decimal of 1010 is: 10
+
+// decimal2binary,binary2decimal
+// Time Complexcity:O(logn base 2),O(length)~~O(n);
+// Space Complexcity:O(logn base 2),O(1);
 
